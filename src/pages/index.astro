@@ -1,0 +1,25 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import Hero from "../components/Hero.astro";
+import ProjectsGrid from "../components/ProjectsGrid.astro";
+---
+
+<BaseLayout
+  title="Luis Mars | Projects"
+  description="A static hub of live projects, tools, and experiments by Luis Mars."
+  canonicalPath="/"
+>
+  <main class="page">
+    <Hero />
+    <ProjectsGrid />
+  </main>
+  <footer class="site-footer">
+    <p class="footer-brand">Luis Mars</p>
+    <p class="footer-note">Live project hub for tools, experiments, and mission resources.</p>
+    <nav class="footer-links" aria-label="Footer links">
+      <a href="#top">Back to top</a>
+      <span aria-hidden="true">/</span>
+      <a href="https://github.com/LuisMars" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </nav>
+  </footer>
+</BaseLayout>

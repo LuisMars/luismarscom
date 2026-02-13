@@ -1,0 +1,37 @@
+---
+import { getCollection } from "astro:content";
+import ProjectCard from "./ProjectCard.astro";
+
+const entries = await getCollection("projects", ({ data }) => typeof data.url === "string" && data.url.startsWith("https://"));
+
+const sortedProjects = entries.sort((left, right) => {
+  if (left.data.featured !== right.data.featured) {
+    return left.data.featured ? -1 : 1;
+  }
+
+  if (left.data.order !== right.data.order) {
+    return left.data.order - right.data.order;
+  }
+
+  return left.data.title.localeCompare(right.data.title);
+});
+---
+
+<section class="projects" id="projects" aria-labelledby="projects-heading">
+  <div class="section-head">
+    <h2 id="projects-heading">Live Projects</h2>
+    <p>Curated destinations. New entries are maintained through markdown content files.</p>
+  </div>
+
+  {
+    sortedProjects.length > 0 ? (
+      <div class="project-grid">
+        {sortedProjects.map((project) => (
+          <ProjectCard title={project.data.title} description={project.data.description} url={project.data.url} />
+        ))}
+      </div>
+    ) : (
+      <p class="empty-state">No live projects yet. Add markdown entries in src/content/projects.</p>
+    )
+  }
+</section>
