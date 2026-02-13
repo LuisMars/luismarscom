@@ -5,10 +5,6 @@ import ProjectCard from "./ProjectCard.astro";
 const entries = await getCollection("projects", ({ data }) => typeof data.url === "string" && data.url.startsWith("https://"));
 
 const sortedProjects = entries.sort((left, right) => {
-  if (left.data.featured !== right.data.featured) {
-    return left.data.featured ? -1 : 1;
-  }
-
   if (left.data.order !== right.data.order) {
     return left.data.order - right.data.order;
   }

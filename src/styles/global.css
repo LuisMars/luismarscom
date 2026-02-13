@@ -101,6 +101,48 @@ h1 {
   box-shadow: 0 8px 18px rgba(32, 27, 22, 0.22);
 }
 
+.about {
+  animation: fade-up 390ms 50ms ease-out both;
+  margin-top: 1.15rem;
+  border: 2px solid var(--border);
+  background: #fbf6ee;
+  padding: 1rem;
+}
+
+.about h2 {
+  font-size: clamp(1.2rem, 2.4vw, 1.6rem);
+}
+
+.about p {
+  margin: 0.7rem 0 0;
+  color: var(--muted);
+  max-width: 70ch;
+  font-size: 1.02rem;
+  line-height: 1.58;
+}
+
+.about p a {
+  font-weight: 600;
+  text-underline-offset: 0.15em;
+}
+
+.about-links {
+  margin-top: 0.82rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.35rem 0.5rem;
+}
+
+.about-links a {
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.about-links a:hover {
+  text-decoration: underline;
+}
+
 .projects {
   animation: fade-up 420ms 80ms ease-out both;
   margin-top: 2.2rem;
@@ -187,6 +229,8 @@ h1 {
   margin-top: 0.5rem;
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
   gap: 0.45rem;
 }
 
@@ -213,6 +257,10 @@ h1 {
 @media (max-width: 700px) {
   .page {
     padding-inline: 0.86rem;
+  }
+
+  .about {
+    padding: 0.9rem;
   }
 
   .hero-cta {

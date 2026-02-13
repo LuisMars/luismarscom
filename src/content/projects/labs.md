@@ -2,8 +2,8 @@
 title: Labs
 description: Live experiments and prototypes collected under the Labs space.
 url: https://labs.luismars.com/
-featured: true
-order: 1
+featured: false
+order: 2
 tags:
   - experiments
   - tools
