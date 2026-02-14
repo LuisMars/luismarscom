@@ -3,12 +3,13 @@ interface Props {
   title: string;
   description: string;
   url: string;
+  highlight?: boolean;
 }
 
-const { title, description, url } = Astro.props;
+const { title, description, url, highlight = false } = Astro.props;
 ---
 
-<article class="project-card">
+<article class:list={["project-card", highlight && "project-card--highlight"]}>
   <h3>{title}</h3>
   <p>{description}</p>
   <a href={url} target="_blank" rel="noopener noreferrer" aria-label={`Open ${title} in a new tab`}>

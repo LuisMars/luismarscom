@@ -23,7 +23,12 @@ const sortedProjects = entries.sort((left, right) => {
     sortedProjects.length > 0 ? (
       <div class="project-grid">
         {sortedProjects.map((project) => (
-          <ProjectCard title={project.data.title} description={project.data.description} url={project.data.url} />
+          <ProjectCard
+            title={project.data.title}
+            description={project.data.description}
+            url={project.data.url}
+            highlight={project.slug === "hardwired28"}
+          />
         ))}
       </div>
     ) : (
